@@ -96,8 +96,8 @@ fi
 
 zplug load
 
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 export GOPATH="/$HOME/dev/go"
 export GOROOT="/usr/local/opt/go/libexec"
 
@@ -110,12 +110,6 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 [[ -f "${HOME}/.aliases" ]] && source "${HOME}/.aliases"
 [[ -f "${HOME}/.completions" ]] && source "${HOME}/.completions"
 [[ -f "${HOME}/.private" ]] && source "${HOME}/.private"
-
-eval "$(pyenv init -)"
-
-if [[ $(command -v rbenv) ]]; then
-    eval "$(rbenv init - zsh --no-rehash)"
-fi
 
 source <(kubectl completion zsh)
 
