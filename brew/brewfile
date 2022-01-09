@@ -1,0 +1,110 @@
+tap 'homebrew/cask-fonts'
+
+cask 'alacritty'
+
+brew 'neovim' 
+
+brew 'go'
+
+brew 'lua'
+brew 'luajit'
+
+brew 'asdf'
+
+brew 'rust'
+
+brew 'tcpdump'
+
+brew 'wireshark'
+
+brew 'kubectl'
+
+brew 'git'
+
+cask 'brave-browser'  
+
+brew 'pgcli'
+
+brew 'mycli'
+
+brew 'ag'
+
+brew 'fzf'
+
+brew 'tmux'
+
+brew 'wget'
+
+brew 'reattach-to-user-namespace'
+
+brew 'watch'
+
+
+cask 'whatsapp'
+
+cask 'ngrok'
+
+cask '1password'
+
+
+brew 'bat'
+
+brew 'curl', link: true
+
+brew 'git-lfs'
+
+cask 'p4v'
+
+
+brew 'coreutils'
+brew 'gzip'
+brew 'trash'
+
+brew 'diff-so-fancy'
+
+brew 'exa'
+
+brew 'tldr'
+
+
+brew 'grep'
+brew 'jq'
+cask 'vlc'
+cask 'kindle'
+cask 'calibre'
+
+brew 'podman'
+
+brew 'awk'
+brew 'tcpdump'
+brew 'gnu-units'
+
+cask 'spotify'
+
+cask 'notion'
+
+cask 'slack'
+
+
+brew 'awscli'
+
+brew 'httpie'
+
+brew 'coreutils'
+
+brew 'rsync'
+
+brew 'peco'
+
+brew 'tree'
+
+brew 'autojump'
+
+brew 'hub'
+
+brew 'gh'
+
+brew 'gnupg'
+
+cask '1password-cli'
+
