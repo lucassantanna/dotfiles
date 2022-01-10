@@ -113,4 +113,5 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 source <(kubectl completion zsh)
 
+. /usr/local/opt/asdf/libexec/asdf.sh
 
