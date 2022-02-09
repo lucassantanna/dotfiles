@@ -2,6 +2,7 @@
 
 # create simbolic links from dir
 brew install stow
+brew install gpg 
 brew install age
 
 # install vim plug for neovim

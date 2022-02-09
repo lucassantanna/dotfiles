@@ -64,14 +64,8 @@ zstyle ':completion::complete:*' cache-path $ZSH_CACHE_DIR
 
 bindkey -v
 
-if [[ ! -d "$ZPLUG_HOME" ]]; then
-    echo "Installing zplug"
-    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-    source "$ZPLUG_HOME/init.zsh"
-    zplug update
-else
-    source "$ZPLUG_HOME/init.zsh"
-fi
+export ZPLUG_HOME=/opt/homebrew/opt/zplug
+source "$ZPLUG_HOME/init.zsh"
 
 fpath=("$DOTFILES/zsh/completions" $fpath)
 
@@ -113,5 +107,5 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 source <(kubectl completion zsh)
 
-. /usr/local/opt/asdf/libexec/asdf.sh
+. /opt/homebrew/Cellar/asdf/0.9.0/libexec/asdf.sh
 

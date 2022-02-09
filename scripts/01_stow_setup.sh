@@ -6,6 +6,7 @@ stow brew
 
 # github basics
 stow git
+stow gh
 
 # neovim configuration file
 stow nvim

@@ -1,0 +1,37 @@
+# What protocol to use when performing git operations. Supported values: ssh, https
+git_protocol: https
+# What editor gh should run when creating issues, pull requests, etc. If blank, will refer to environment.
+editor:
+# When to interactively prompt. This is a global config that cannot be overridden by hostname. Supported values: enabled, disabled
+prompt: enabled
+# A pager program to send command output to, e.g. "less". Set the value to "cat" to disable the pager.
+pager:
+# Aliases allow you to create nicknames for gh commands
+aliases:
+    delete-merged-pr: 'pr merge --delete-branch'
+    create-pr: '!gh pr create'
+    clone: repo clone
+    view-latest-release: |
+        !repo=${1:-cli/cli}
+        gh release view --repo $repo --json assets,body,publishedAt,tagName,name,url --template '
+        # {{ .name }}
+        {{ .url }}
+        _Published {{ timeago .publishedAt }}_
+        {{ .body }}
+        {{- if ne (len .assets) 0 }}
+        | Assets |
+        | ---- |
+        {{- range .assets }}
+        | {{ .name }} |
+        {{- end }}
+        {{- end }}
+        ' | glow -p -
+    download-latest-release: |
+        !repo=${1:-cli/cli}; picked_asset=$(gh release view -R $repo --json assets -q ".assets[].name" \
+            | fzf --prompt="Pick an asset to download: "); \
+          test -n $picked_asset && echo "Downloading asset $picked_asset..." && gh release download -R $repo -p $picked_asset
+    switch-branch: |
+        !picked_branch="$(git branch --list \
+          | fzf --preview='echo; git log -20 --color --decorate ${-1}'
+          )"
+        test -n "$picked_branch" && git switch "$(echo "$picked_branch" | cut -c 3-)"

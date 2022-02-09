@@ -1,0 +1,33 @@
+[color]
+	pager = no
+[core]
+	pager = nvim -R --cmd 'let g:pager_mode = 1'
+[push]
+	default = simple
+[user]
+	email = 33836178+lucassantanna@users.noreply.github.com
+	name = Lucas Sant' Anna
+	signingkey = 5D7F8924CA3CD5D1 
+[alias]
+	auto-pr-merge = !gh pr merge --auto --merge
+	# Prevent annoying 'Opening in existing browser session.' message
+	browse = !bash -c 'gh browse &> /dev/null'
+	co = checkout
+	cp = cherry-pick
+	gclone = !gh repo clone
+	lp = log -p
+	poh = push -u origin HEAD
+	pr-merge = !gh pr merge --merge --delete-branch && git pull --prune
+	prv = !gh pr view
+[commit]
+	verbose = true
+	gpgsign = true
+[pull]
+	rebase = true
+[pager]
+	branch = no
+[diff]
+	compactionHeuristic = true
+	submodule = log
+[url "git@github.com:"]
+	insteadOf = https://github.com/
